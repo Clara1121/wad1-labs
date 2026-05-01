@@ -1,52 +1,67 @@
 {
-    "playlistCollection": [
-      {
-        "id" : "01",
-        "title": "Beethoven Sonatas",
-        "songs": [
-          {
-            "id" : "04",
-            "title": "Piano Sonata No. 3",
-            "artist": "Beethoven"
-          },
-          {
-            "id" : "05",
-            "title": "Piano Sonata No. 7",
-            "artist": "Beethoven"
-          },
-          {
-            "id" : "06",
-            "title": "Piano Sonata No. 10",
-            "artist": "Beethoven"
-          }
-        ]
-      },
-      {
-        "id" : "02",
-        "title": "Beethoven Concertos",
-        "songs": [
-          {
-            "id" : "07",
-            "title": "Piano Concerto No. 0",
-            "artist": "Beethoven"
-          },
-          {
-            "id" : "08",
-            "title": "Piano Concerto No. 4",
-            "artist": "Beethoven"
-          },
-          {
-            "id" : "09",
-            "title": "Piano Concerto No. 6",
-            "artist": "Beethoven"
-          }
-        ]
-      },
-      {
-        "id" : "03",
-        "title": "Beethoven Unfinished Symphonies",
-        "songs": []
-      }
-    ]
-  }
-  
+  "playlistCollection": [
+    {
+      "id": "01",
+      "title": "Beethoven Sonatas",
+      "rating": 5,
+      "songs": [
+        {
+          "id": "04",
+          "title": "Piano Sonata No. 3",
+          "artist": "Beethoven"
+        },
+        {
+          "id": "05",
+          "title": "Piano Sonata No. 7",
+          "artist": "Beethoven"
+        },
+        {
+          "id": "06",
+          "title": "Piano Sonata No. 10",
+          "artist": "Beethoven"
+        }
+      ]
+    },
+    {
+      "id": "02",
+      "title": "Beethoven Concertos",
+      "rating": 3,
+      "songs": [
+        {
+          "id": "07",
+          "title": "Piano Concerto No. 0",
+          "artist": "Beethoven"
+        },
+        {
+          "id": "08",
+          "title": "Piano Concerto No. 4",
+          "artist": "Beethoven"
+        },
+        {
+          "id": "09",
+          "title": "Piano Concerto No. 6",
+          "artist": "Beethoven"
+        }
+      ]
+    },
+    {
+      "id": "03",
+      "title": "Beethoven Unfinished Symphonies",
+      "songs": []
+    },
+    {
+      "id": "d1ad9505-5a23-41f3-82eb-488f5adeb382",
+      "title": "Sixty songs",
+      "rating": "3",
+      "date": "2026-04-30T21:16:07.598Z",
+      "songs": []
+    },
+    {
+      "id": "4cac35b8-b32e-43bf-99d4-338bda451de1",
+      "title": "Lame",
+      "rating": "1",
+      "date": "2026-04-30T21:16:21.154Z",
+      "songs": []
+    }
+  ]
+}

@@ -13,3 +13,11 @@ html {
     background-color: lightgrey;
   }
   
+  .editSubmit {
+    border:none;
+    background: none;
+  }
+  
+  .hide{
+    display: none;
+}

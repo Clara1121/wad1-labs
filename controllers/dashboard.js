@@ -57,6 +57,19 @@ const dashboard = {
 
   },
 
+  updateBook(request, response) {
+    const booklistId = request.params.id;
+    const bookId = request.params.songid;
+    logger.debug("updating song " + bookId);
+    const updatedBook = {
+      id: songId,
+      title: request.body.title,
+      author: request.body.author
+    };
+    bookStore.editBook(booklistId, bookId, updatedBook);
+    response.redirect('/books/' + bookId);
+},
+
 
 
   addPlaylist(request, response) {
@@ -72,10 +85,9 @@ const dashboard = {
       date: timestamp
     };
 
-    playlistStore.addPlaylist(newPlaylist, request.files.picture, function() {
-        response.redirect("/dashboard");
-    });
+  
   },
+
 
 
 

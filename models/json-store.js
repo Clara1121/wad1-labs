@@ -3,6 +3,10 @@
 import { Low } from "lowdb";
 import { JSONFile } from "lowdb/node";
 import dotenv from "dotenv";
+import logger from '../utils/logger.js';
+import { v2 as cloudinary } from "cloudinary";
+import fs from "fs/promises";
+
 
 dotenv.config({ quiet: true });
 
@@ -75,6 +79,36 @@ class JsonStore {
     data[0][arr].splice(index, 1, obj);
     await this.db.write();
   }
+  async deleteFromCloudinary(publicId) {
+    return new Promise((resolve, reject) => {
+      cloudinary.uploader.destroy(publicId, (result, err) => {
+        if (err) {
+          reject(err);
+        } else {
+          resolve(result);
+        }
+      });
+    });
+  }
+
+
+  async addToCloudinary(file) {
+    const result = await cloudinary.uploader.upload(file.tempFilePath);
+    logger.info("Cloudinary result:", result);
+
+    try {
+      await fs.unlink(file.tempFilePath);
+      logger.info("Temporary file deleted");
+    } catch (err) {
+      logger.warn("Temp file deletion failed:", err);
+    }
+
+    return {
+      url: result.url,
+      public_id: result.public_id,
+    };
+  }
+
 }
 
 export default JsonStore;

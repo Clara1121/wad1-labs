@@ -24,9 +24,17 @@ editSong(id, songId, updatedSong) {
   this.store.editItem(this.collection, id, songId, this.array, updatedSong);
 },
 
-addPlaylist(playlist) {
-  this.store.addCollection(this.collection, playlist);
+async addPlaylist(playlist, file, response) {
+  try {
+    playlist.picture = await this.store.addToCloudinary(file);
+    this.store.addCollection(this.collection, playlist);
+    response();
+  } catch (error) {
+    logger.error("Error processing playlist:", error);
+    response(error);
+  }
 },
+
 
 removeSong(id, songId) {
   this.store.removeItem(this.collection, id, this.array, songId);

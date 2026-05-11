@@ -60,6 +60,22 @@ searchUserPlaylists(search, userid) {
     (playlist => playlist.userid === userid && playlist.title.toLowerCase().includes(search.toLowerCase())))
 }, 
 
+async removePlaylist(id, response) {
+  const playlist = this.getPlaylist(id);
+
+  if (playlist.picture && playlist.picture.public_id) {
+    try {
+      await this.store.deleteFromCloudinary(playlist.picture.public_id);
+      logger.info("Cloudinary image deleted");
+    } catch (err) {
+      logger.error("Failed to delete Cloudinary image:", err);
+    }
+  }
+
+  this.store.removeCollection(this.collection, playlist);
+  response();
+},
+
 
 };
 
